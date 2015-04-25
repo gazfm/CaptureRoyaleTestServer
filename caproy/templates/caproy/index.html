@@ -1,0 +1,51 @@
+{% extends "caproy/base.html" %}
+
+{% block title %}Capture Royale{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="jumbotron">
+            <h1>Play now</h1>
+            <p>Play directly in your web browser, no need to install anything.</p>
+            <p>
+                {% if signed_in %}
+                <a class="btn btn-primary btn-lg" href="game.html" role="button">Launch Game</a>
+                {% else %}
+                <a class="btn btn-primary btn-lg" href="sign-in.html" role="button">Sign in</a>
+                <a class="btn btn-info btn-lg" href="register.html" role="button">Register</a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Recently conquered</h2>
+            <table class="table table-striped">
+                <tr><th>Player</th><th>Survival time</th></tr>
+                <tr><td>Garry</td><td>4 days</td></tr>
+                <tr><td>Whatever</td><td>6 days</td></tr>
+                <tr><td>Test</td><td>8 days</td></tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>New defenses</h2>
+            <table class="table table-striped">
+                <tr><th>Player</th><th>Rating</th></tr>
+                <tr><td>Bob</td><td>?</td></tr>
+                <tr><td>Jim</td><td>72%</td></tr>
+                <tr><td>Mike</td><td>88%</td></tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>Top rated players</h2>
+            <table class="table table-striped">
+                <tr><th>Player</th><th>Ratio</th></tr>
+                <tr><td>Garry</td><td>15/1</td></tr>
+                <tr><td>Whatever</td><td>93/4</td></tr>
+                <tr><td>Test</td><td>23/2</td></tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+

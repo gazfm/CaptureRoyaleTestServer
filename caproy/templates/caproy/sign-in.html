@@ -1,0 +1,27 @@
+{% extends "caproy/base.html" %}
+
+{% block title %}Capture Royale{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-offset-3 col-md-3">
+            <h2>Sign in</h2>
+        </div>
+        <div class="col-md-4">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="text-username">Username</label>
+                    <input type="text" name="username" id="text-username" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="text-password">Password</label>
+                    <input type="password" name="password" id="text-password"  class="form-control" />
+                </div>
+                <input type="submit" class="btn btn-lg btn-primary">
+                <a href="/" class="btn btn-lg btn-warning">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
