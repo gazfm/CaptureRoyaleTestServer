@@ -21,6 +21,7 @@ def register(request):
     })
 
 def sign_in(request):
+    sign_in_failed = False
     if request.method == 'POST':
         # see http://www.djangobook.com/en/2.0/chapter14.html
         username = request.POST.get('username', '')
@@ -31,8 +32,10 @@ def sign_in(request):
             auth.login(request, user)
             # Redirect to a success page.
             return HttpResponseRedirect("/")
+        else:
+            sign_in_failed = True
     # Sign-in page
-    return render(request, "caproy/sign-in.html")
+    return render(request, "caproy/sign-in.html", {"sign_in_failed": sign_in_failed})
 
 def sign_out(request):
     auth.logout(request)
